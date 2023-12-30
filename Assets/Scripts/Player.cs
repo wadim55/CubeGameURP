@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
    {
       Move();
    }
-   
+
    private void Move()
    {
       float h = Input.GetAxis("Horizontal");

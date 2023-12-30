@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
    [SerializeField] private GameObject scoreGameObject;
    public GameObject[] allScore;
    public int scoreCount;
-   [SerializeField] private Text scoreCountText;
+   [SerializeField] private Text scoreCountText;    
 
    private void Start()
    {
@@ -22,6 +22,11 @@ public class ScoreManager : MonoBehaviour
    private void Update()
    {
        scoreCountText.text = scoreCount.ToString();
+       if (GameObject.Find("Score(Clone)") == null)
+       {
+           SpawnScore();
+           allScore = GameObject.FindGameObjectsWithTag("Score");
+       }
    }
 
    private void SpawnScore()
